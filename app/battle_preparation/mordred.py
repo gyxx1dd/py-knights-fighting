@@ -20,4 +20,4 @@ def preparation_mordred(knight_config: dict) -> dict:
         if "hp" in mordred["potion"]["effect"]:
             mordred["hp"] += mordred["potion"]["effect"]["hp"]
 
-        return mordred
+    return mordred
