@@ -1,15 +1,12 @@
 def preparation_red_knight(knight_config: dict) -> dict:
     red_knight = knight_config["red_knight"]
 
-    # apply armour
     red_knight["protection"] = 0
     for armour in red_knight["armour"]:
         red_knight["protection"] += armour["protection"]
 
-    # apply weapon
     red_knight["power"] += red_knight["weapon"]["power"]
 
-    # apply potion if exist
     if red_knight["potion"] is not None:
         if "power" in red_knight["potion"]["effect"]:
             red_knight["power"] += red_knight["potion"]["effect"]["power"]

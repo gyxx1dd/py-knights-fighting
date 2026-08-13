@@ -3,8 +3,7 @@ from app.battle_preparation.lancelot import lancelot_preparation
 from app.battle_preparation.arthur import arthur_preparation
 from app.battle_preparation.mordred import preparation_mordred
 from app.battle_preparation.red_knight import preparation_red_knight
-from app.battle.lancelot_mordred import battle_lancelot_mordred
-from app.battle.arthur_redknight import battle_arthur_redknight
+from app.battle.battle_all import battle_all_knights
 
 
 def battle(knight_config: dict) -> dict:
@@ -16,9 +15,7 @@ def battle(knight_config: dict) -> dict:
 
     red_knight = preparation_red_knight(knight_config)
 
-    battle_lancelot_mordred(lancelot, mordred)
-
-    battle_arthur_redknight(arthur, red_knight)
+    battle_all_knights(lancelot, mordred, arthur, red_knight)
 
     return {
         lancelot["name"]: lancelot["hp"],

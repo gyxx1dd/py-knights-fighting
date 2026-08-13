@@ -1,15 +1,15 @@
-def arthur_preparation(knight_config: dict) -> dict:
+from typing import Any
+
+
+def arthur_preparation(knight_config: dict[str, Any]) -> dict:
     arthur = knight_config["arthur"]
 
-    # apply armour
     arthur["protection"] = 0
     for armour in arthur["armour"]:
         arthur["protection"] += armour["protection"]
 
-    # apply weapon
     arthur["power"] += arthur["weapon"]["power"]
 
-    # apply potion if exist
     if arthur["potion"] is not None:
         if "power" in arthur["potion"]["effect"]:
             arthur["power"] += arthur["potion"]["effect"]["power"]
